@@ -1,0 +1,20 @@
+Podríamos definir los conjuntos de la siguiente forma en la notación por comprensión:
+
+A (Activos):
+A={x/x inició sesión en los últimos 30 días}
+
+B (Premium):
+B={x/x paga suscripción mensual}
+
+C (Con deuda):
+C={x/x tiene facturas vencidas}
+
+De esta forma decimos que hay un elemento "x" tal que cumple una característica que es común a todos los elementos de ese conjunto.
+
+Siguiendo la actividad, la operación matemática en notación de conjuntos que define el grupo que se pide es:
+
+(A∩B) - C Que también se puede escribir como: A∩B∩C'
+
+En A∩B usamos intersección porque queremos usuarios que cumplan ambas condiciones: Activos (A) y que sean Premium (B). De esta forma solo pintamos lo que está en A y lo que está en B a la vez, y luego aplicamos la diferencia relativa entre el resultado y el conjunto C (usuarios con deuda), quitando la porción de usuarios que sí están en A y en B, pero que también están en C (es decir que tienen deudas), de esta forma cumplimos con lo que se pedía.
+
+En el caso de representarlo de la siguiente forma: A∩B∩C', cambiamos la diferencia relativa con la intersección del complemento de C, es decir que son los usuarios que están en A y en B, pero a la vez están en el complemento de C (C'), que sería lo mismo que decir todo lo que no está en C, llegando al mismo resultado.
