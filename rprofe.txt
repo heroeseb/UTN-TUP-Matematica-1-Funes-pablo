@@ -1,0 +1,18 @@
+tabla_5v <- expand.grid(
+  A = c(FALSE, TRUE),
+  B = c(FALSE, TRUE),
+  C = c(FALSE, TRUE),
+  D = c(FALSE, TRUE),
+  E = c(FALSE, TRUE)
+)
+
+View(tabla_5v)
+
+#mostrar funcion salida
+tabla_5v$salida <- tabla_5v$A & (tabla_5v$B | tabla_5v$C) & tabla_5v$D
+
+#Filtrar miniterminos
+minterminos_encontrados <- tabla_5v[tabla_5v$salida == TRUE, ]
+
+#Muestre los miniterminos
+print(minterminos_encontrados)

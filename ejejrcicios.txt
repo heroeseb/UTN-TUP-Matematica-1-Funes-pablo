@@ -1,0 +1,77 @@
+¡Excelente iniciativa! Prepararse con ejercicios prácticos es la mejor forma de dominar R, especialmente cuando se trata de modelar lógica y estructuras de datos para programación. 
+
+[cite_start]A continuación, preparé **50 ejercicios** estructurados según los temas de los apuntes de la UTN que me adjuntaste (Lógica, Álgebra de Boole y Conjuntos)[cite: 4, 12, 79]. Los diseñé para que escalen desde conceptos básicos hasta implementaciones algorítmicas más complejas, sumando algunos escenarios de la vida real (hardware, desarrollo web, videojuegos y ajedrez) para que sea más entretenido.
+
+---
+
+### **Bloque 1: Lógica Computacional (Unidad 1)**
+*Uso de operadores booleanos (`&`, `|`, `!`), cuantificadores y tablas de verdad.*
+
+1. Definí dos variables: `servidor_online <- TRUE` y `base_datos_ok <- FALSE`. [cite_start]Usá el operador `&` para verificar si el sistema está operativo[cite: 145].
+2. Creá un vector que represente los zócalos de memoria RAM de una notebook: `ram_slots <- c(TRUE, FALSE, TRUE, TRUE)`. [cite_start]Usá la función `any()` para comprobar si existe al menos un slot vacío (`FALSE`)[cite: 180].
+3. Estás probando procesadores Ryzen. Tenés `temperaturas_ok <- c(TRUE, TRUE, TRUE, TRUE)`. [cite_start]Usá la función `all()` para verificar si todos pasaron la prueba[cite: 179].
+4. Simulá una regla del ajedrez: `en_jaque <- TRUE` y `rey_movido <- FALSE`. [cite_start]Usá la disyunción (`|`) para determinar si el jugador debe moverse o bloquear el ataque[cite: 146].
+5. [cite_start]Traducí la equivalencia lógica del condicional (Si P entonces Q) a R usando `!p | q` con las variables `p <- TRUE` y `q <- FALSE`[cite: 148].
+6. [cite_start]Creá los vectores `p <- c(TRUE, TRUE, FALSE, FALSE)` y `q <- c(TRUE, FALSE, TRUE, FALSE)`[cite: 158, 164].
+7. [cite_start]Construí un `data.frame` llamado `tabla_verdad` uniendo los vectores `p` y `q` del ejercicio anterior[cite: 165].
+8. [cite_start]Agregá una columna a `tabla_verdad` llamada `Conjunción` que calcule `p & q`[cite: 166].
+9. Milo quiere jugar a Roblox. La regla es: `tarea_lista <- FALSE`, `fin_de_semana <- TRUE`. Escribí la expresión lógica para saber si tiene permiso (`tarea_lista | fin_de_semana`).
+10. Comprobá el estado de un componente en React: `is_loaded <- TRUE` y `has_error <- FALSE`. [cite_start]Validá que cargó y no tiene errores usando `&` y `!`[cite: 145, 147].
+11. Simulá una red Starlink: `conexion_activa <- c(rep(TRUE, 9), FALSE)`. [cite_start]Usá `any(!conexion_activa)` para detectar si algún nodo se cayó[cite: 180].
+12. Demostrá en un script si el resultado de evaluar `p | [cite_start]!p` en un vector de prueba devuelve siempre `TRUE` (Tautología)[cite: 186].
+13. Evaluá una doble negación en R: definí `estado <- TRUE` e imprimí `!!estado` para ver si retorna el valor original.
+14. Un script de permisos de Firebase requiere: `usuario_logueado & (es_admin | dueño_documento)`. [cite_start]Asigná valores booleanos y evaluá la variable resultante[cite: 170, 173].
+15. [cite_start]Explicá en un comentario de tu script por qué `all(c(TRUE, TRUE, FALSE))` devuelve `FALSE`[cite: 181].
+
+---
+
+### **Bloque 2: Álgebra de Boole y Lógica Digital (Unidad 2)**
+*Compuertas lógicas, Suma de Productos (SOP) y optimización.*
+
+16. [cite_start]Evaluá el operador XOR (`xor()`) simulando dos jugadores que deben elegir caminos distintos en un juego[cite: 23, 26].
+17. [cite_start]Escribí una función propia en R llamada `nor_gate <- function(a, b)` que devuelva la lógica de una compuerta NOR universal[cite: 24, 26].
+18. Probá tu `nor_gate` pasándole como argumentos `a = TRUE` y `b = FALSE`.
+19. En un juego de minería, podés picar un mineral si: `pico_nivel_5 & capa_obsidiana`. Escribí esto como una expresión booleana simple.
+20. [cite_start]Creá un `data.frame` con 8 filas para las combinaciones de 3 variables lógicas: `A`, `B` y `C`[cite: 36].
+21. [cite_start]Agregá una columna `Salida` a ese dataframe definida por la regla `(A | B) & !C`[cite: 37].
+22. [cite_start]Usá funciones de R para filtrar y mostrar únicamente las filas del dataframe donde `Salida == TRUE`[cite: 38].
+23. [cite_start]Observando las filas filtradas en el ejercicio 22, escribí en un comentario la expresión SOP (Suma de Productos) canónica (Ej. $m_2 + m_4$)[cite: 39].
+24. Vas a crear un sistema de disparo en un FPS. Las reglas son: `(gatillo & municion) & !seguro`. Definí las variables y probá la salida.
+25. Simplificación de Karnaugh en código: Escribí `F_original <- (A & B) | (A & !B)[cite_start]` y una versión simplificada `F_minima <- A`[cite: 52, 53].
+26. [cite_start]Usá la función `identical(F_original, F_minima)` creando vectores de prueba para verificar que no perdiste lógica al simplificar[cite: 60].
+27. [cite_start]Creá una función `nand_gate <- function(a, b) { !(a & b) }`[cite: 44].
+28. [cite_start]Usando **únicamente** la función `nand_gate` del ejercicio 27, combiná sus llamados para emular el comportamiento de una compuerta NOT[cite: 45].
+29. [cite_start]Comprobá la igualdad lógica (XNOR) entre dos variables usando el operador de comparación de R: `A == B`[cite: 26].
+30. Escribí un "Kill Switch": Simulá un ciclo donde una variable `overheat` actúa como multiplicador lógico. [cite_start]Si es `TRUE`, todo el sistema debe dar `FALSE`[cite: 61].
+
+---
+
+### **Bloque 3: Teoría de Conjuntos y Particiones (Unidad 3)**
+*Manipulación de vectores como conjuntos, leyes de De Morgan e isomorfismos.*
+
+31. Definí dos conjuntos de mods de Minecraft: `mods_fabric <- c("Create", "Iris", "Sodium")` y `mods_forge <- c("Create", "Optifine")`. [cite_start]Calculá la unión de ambos[cite: 87].
+32. [cite_start]Usá la función `intersect()` para descubrir qué mod está disponible en ambas colecciones del ejercicio anterior[cite: 88].
+33. [cite_start]Aplicá `setdiff()` para encontrar los elementos que son exclusivos del conjunto `mods_fabric`[cite: 89].
+34. [cite_start]Calculá la Diferencia Simétrica combinando funciones: `union(setdiff(A, B), setdiff(B, A))` usando los vectores del ejercicio 31[cite: 90].
+35. [cite_start]Usá el operador de pertenencia `%in%` para verificar si "Sodium" se encuentra dentro del vector `mods_forge`[cite: 91].
+36. Definí un universo de aperturas de ajedrez `U <- 1:5` y un subconjunto `A <- c(1, 2)`. Calculá el complemento de A en U.
+37. Tenés un conjunto `A <- c("Azul", "Gris", "Pastel")`. [cite_start]Calculá conceptualmente (usando matemática) cuántos elementos tendrá su conjunto potencia ($2^n$)[cite: 94].
+38. [cite_start]Escribí una sentencia lógica en R que verifique automáticamente si la longitud del conjunto potencia de un vector `A` es igual a `2^length(A)`[cite: 97].
+39. [cite_start]Vamos a probar la Primera Ley de De Morgan[cite: 106]. Definí Universo `U <- 1:10`, `A <- c(2,4,6,8)`, `B <- c(1,2,3)`.
+40. (Continuación) Escribí la parte izquierda de la ecuación: El complemento de la unión de A y B respecto a U.
+41. (Continuación) [cite_start]Escribí la parte derecha: La intersección de los complementos de A y B respecto a U[cite: 106].
+42. [cite_start]Usá la función `setequal()` para comparar el resultado del ejercicio 40 y 41. Si devuelve `TRUE`, demostraste a De Morgan[cite: 107].
+43. [cite_start]Diseñá un dataset dividido: `D <- 1:12`, `P1 <- 1:6`, `P2 <- 7:12`[cite: 111, 112].
+44. Verificá la *Disjuntividad* de tu partición usando `intersect(P1, P2)`. [cite_start]Debe arrojar un vector vacío[cite: 116].
+45. [cite_start]Verificá el *Recubrimiento* probando si `setequal(union(P1, P2), D)` es `TRUE`[cite: 117, 122].
+
+---
+
+### **Bloque 4: Desafíos Integradores (Intermedio-Avanzado)**
+*Modelado algorítmico combinando todos los conceptos previos.*
+
+46. **Script de Compatibilidad de Hardware:** Escribí una función que reciba dos argumentos: una velocidad de RAM deseada y un vector de velocidades soportadas por la mother. Usá `%in%` y un condicional (if/else) para imprimir "Compatible" o "Incompatible".
+47. **El Desafío Universal (OR con NANDs):** Usando la función `nand_gate` del Ejercicio 27, construí una estructura anidada que se comporte **exactamente** como una compuerta OR. (Pista: necesitás negar las entradas primero usando NANDs) [cite_start][cite: 45, 46].
+48. [cite_start]**Validación de Partición Completa:** Creá una función `validar_particion(U, P1, P2)` que ejecute las comprobaciones de los ejercicios 44 y 45. Si ambas se cumplen (usando el operador `&`), debe imprimir "Partición Válida", sino "Error en Partición"[cite: 118].
+49. **Filtro de Datos Estéticos:** Tenés un data.frame de configuraciones de interfaz. Extraé (filtrá) solo los elementos donde el `color_primario` sea "gris_carbon" o el `estilo` sea "minimalista". Guardalo en un nuevo subset.
+50. **Motor de Reglas de Negocio:** Programá una función `evaluar_credito(ingresos, antiguedad, vip, deuda)` basada en la Unidad 2. Evaluá internamente `((ingresos & antiguedad) | vip) & !deuda`. [cite_start]Pasale un caso de prueba donde el usuario es `vip` pero tiene `deuda` y retorná el resultado[cite: 51, 52].
